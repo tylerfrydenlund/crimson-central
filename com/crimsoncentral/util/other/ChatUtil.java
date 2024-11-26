@@ -1,5 +1,6 @@
 package com.crimsoncentral.util.other;
 
+import java.security.SecureRandom;
 import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,7 +45,7 @@ public class ChatUtil {
 		colors.put(13, ChatColor.WHITE);
 		colors.put(14, ChatColor.YELLOW);
 
-		Random ran = new Random();
+		Random ran = new SecureRandom();
 		int randomNum = ran.nextInt((colors.size() - 1) + 1) + 1;
 
 		return colors.get(randomNum);

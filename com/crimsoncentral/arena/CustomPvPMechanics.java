@@ -1,5 +1,6 @@
 package com.crimsoncentral.arena;
 
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -82,7 +83,7 @@ public class CustomPvPMechanics implements Listener {
 
 				if (!CoolDown.coolDownExists("knockback-" + damaged.getName() + "-" + damager.getName())) {
 					new CoolDown("knockback-" + damaged.getName() + "-" + damager.getName(), damaged, 2, 5);
-					Random ran = new Random();
+					Random ran = new SecureRandom();
 					double r = 0.1 + (0.5 - 0.2) * ran.nextDouble();
 					damaged.teleport(damaged.getLocation().add(0, r, 0));
 

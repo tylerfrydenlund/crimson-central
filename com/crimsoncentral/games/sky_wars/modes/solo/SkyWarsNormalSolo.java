@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -489,7 +490,7 @@ public final class SkyWarsNormalSolo extends Arena implements Cloneable {
 			}
 		}
 
-		Random rand = new Random();
+		Random rand = new SecureRandom();
 		Integer randInt = rand.nextInt(players.size());
 		Iterator<Entry<Integer, Player>> it = players.entrySet().iterator();
 		while (it.hasNext()) {
