@@ -2,6 +2,7 @@ package com.crimsoncentral.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +27,7 @@ public class ArenaConfig {
 	public ArenaConfig(Double mode) {
 
 		try {
-			arenaData = File.createTempFile("temp-arena-config-" + mode, ".yml");
+			arenaData = Files.createTempFile("temp-arena-config-" + mode, ".yml").toFile();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
