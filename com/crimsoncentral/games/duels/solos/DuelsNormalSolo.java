@@ -1,5 +1,6 @@
 package com.crimsoncentral.games.duels.solos;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -213,7 +214,7 @@ public final class DuelsNormalSolo extends Arena implements Cloneable {
 		try {
 			reader = new BufferedReader(new FileReader(config.arenaData.getAbsolutePath()));
 			try {
-				while ((line = reader.readLine()) != null) {
+				while ((line = BoundedLineReader.readLine(reader, 5_000_000)) != null) {
 					strings.add(line);
 				}
 			} catch (IOException e) {
