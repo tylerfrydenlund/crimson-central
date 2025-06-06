@@ -1,5 +1,6 @@
 package com.crimsoncentral.arena;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -291,7 +292,7 @@ public class Team {
 		final String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		final int N = alphabet.length();
 
-		Random r = new Random();
+		Random r = new SecureRandom();
 
 		for (int i = 0; i < 26; i++) {
 			letter1 = alphabet.charAt(r.nextInt(N));
